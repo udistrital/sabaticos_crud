@@ -18,7 +18,7 @@ type SoporteSolicitud struct {
 	FechaModificacion        string                  `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
 	SolicitudId              *Solicitud              `orm:"column(solicitud_id);rel(fk)"`
 	EstadoSoporteSolicitudId *EstadoSoporteSolicitud `orm:"column(estado_soporte_solicitud_id);rel(fk)"`
-	RolTerceroId             *RolTercero             `orm:"column(rol_tercero_id);rel(fk)"`
+	RolUsuario               string                  `orm:"column(rol_usuario)"`
 }
 
 func (t *SoporteSolicitud) TableName() string {
