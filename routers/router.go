@@ -28,12 +28,6 @@ func init() {
 			),
 		),
 
-		beego.NSNamespace("/rol_tercero",
-			beego.NSInclude(
-				&controllers.RolTerceroController{},
-			),
-		),
-
 		beego.NSNamespace("/solicitud",
 			beego.NSInclude(
 				&controllers.SolicitudController{},

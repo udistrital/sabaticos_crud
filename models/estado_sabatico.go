@@ -10,12 +10,12 @@ import (
 )
 
 type EstadoSabatico struct {
-	Id                int       `orm:"column(id);pk;auto"`
-	CodigoAbreviacion string    `orm:"column(codigo_abreviacion)"`
-	NombreEstado      string `orm:"column(nombre_estado);type(timestamp without time zone)"`
-	Activo            bool      `orm:"column(activo)"`
-	FechaCreacion     string    `orm:"column(fecha_creacion);type(timestamp without time zone)"`
-	FechaModificacion string    `orm:"column(fecha_modificacion)"`
+	Id                int    `orm:"column(id);pk;auto"`
+	CodigoAbreviacion string `orm:"column(codigo_abreviacion)"`
+	NombreEstado      string `orm:"column(nombre_estado);size(50)"`
+	Activo            bool   `orm:"column(activo)"`
+	FechaCreacion     string `orm:"column(fecha_creacion);type(timestamp without time zone)"`
+	FechaModificacion string `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
 }
 
 func (t *EstadoSabatico) TableName() string {

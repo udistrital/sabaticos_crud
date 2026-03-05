@@ -16,7 +16,7 @@ type Solicitud struct {
 	FechaCreacion     string         `orm:"column(fecha_creacion);type(timestamp without time zone)"`
 	FechaModificacion string         `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
 	TipoSolicitudId   *TipoSolicitud `orm:"column(tipo_solicitud_id);rel(fk)"`
-	SabaticoId        *Sabatico      `orm:"column(sabatico_id);rel(fk)"`
+	SabaticoId        *Sabatico      `orm:"column(sabatico_id);rel(fk);null"`
 }
 
 func (t *Solicitud) TableName() string {

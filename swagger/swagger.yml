@@ -581,120 +581,6 @@ paths:
           description: '{string} delete success!'
         "403":
           description: id is empty
-  /rol_tercero/:
-    get:
-      tags:
-      - rol_tercero
-      description: get RolTercero
-      operationId: RolTerceroController.Get All
-      parameters:
-      - in: query
-        name: query
-        description: Filter. e.g. col1:v1,col2:v2 ...
-        type: string
-      - in: query
-        name: fields
-        description: Fields returned. e.g. col1,col2 ...
-        type: string
-      - in: query
-        name: sortby
-        description: Sorted-by fields. e.g. col1,col2 ...
-        type: string
-      - in: query
-        name: order
-        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
-        type: string
-      - in: query
-        name: limit
-        description: Limit the size of result set. Must be an integer
-        type: string
-      - in: query
-        name: offset
-        description: Start position of result set. Must be an integer
-        type: string
-      responses:
-        "200":
-          description: ""
-          schema:
-            $ref: '#/definitions/models.RolTercero'
-        "403":
-          description: ""
-    post:
-      tags:
-      - rol_tercero
-      description: create RolTercero
-      operationId: RolTerceroController.Post
-      parameters:
-      - in: body
-        name: body
-        description: body for RolTercero content
-        required: true
-        schema:
-          $ref: '#/definitions/models.RolTercero'
-      responses:
-        "201":
-          description: '{int} models.RolTercero'
-        "403":
-          description: body is empty
-  /rol_tercero/{id}:
-    get:
-      tags:
-      - rol_tercero
-      description: get RolTercero by id
-      operationId: RolTerceroController.Get One
-      parameters:
-      - in: path
-        name: id
-        description: The key for staticblock
-        required: true
-        type: string
-      responses:
-        "200":
-          description: ""
-          schema:
-            $ref: '#/definitions/models.RolTercero'
-        "403":
-          description: :id is empty
-    put:
-      tags:
-      - rol_tercero
-      description: update the RolTercero
-      operationId: RolTerceroController.Put
-      parameters:
-      - in: path
-        name: id
-        description: The id you want to update
-        required: true
-        type: string
-      - in: body
-        name: body
-        description: body for RolTercero content
-        required: true
-        schema:
-          $ref: '#/definitions/models.RolTercero'
-      responses:
-        "200":
-          description: ""
-          schema:
-            $ref: '#/definitions/models.RolTercero'
-        "403":
-          description: :id is not int
-    delete:
-      tags:
-      - rol_tercero
-      description: delete the RolTercero
-      operationId: RolTerceroController.Delete
-      parameters:
-      - in: path
-        name: id
-        description: The id you want to delete
-        required: true
-        type: string
-      responses:
-        "200":
-          description: '{string} delete success!'
-        "403":
-          description: id is empty
   /sabatico/:
     get:
       tags:
@@ -1293,8 +1179,6 @@ definitions:
         type: string
       Descripcion:
         type: string
-      Estado:
-        type: string
       FechaCreacion:
         type: string
       FechaModificacion:
@@ -1302,6 +1186,8 @@ definitions:
       Id:
         type: integer
         format: int64
+      Nombre:
+        type: string
   models.EstadoSoporteSolicitud:
     title: EstadoSoporteSolicitud
     type: object
@@ -1356,21 +1242,6 @@ definitions:
       SolicitudId:
         $ref: '#/definitions/models.Solicitud'
       TerceroId:
-        type: integer
-        format: int64
-  models.RolTercero:
-    title: RolTercero
-    type: object
-    properties:
-      Activo:
-        type: boolean
-      CodigoAbreviacion:
-        type: string
-      FechaCreacion:
-        type: string
-      FechaModificacion:
-        type: string
-      Id:
         type: integer
         format: int64
   models.Sabatico:
@@ -1433,8 +1304,8 @@ definitions:
       Id:
         type: integer
         format: int64
-      RolTerceroId:
-        $ref: '#/definitions/models.RolTercero'
+      RolUsuario:
+        type: string
       SabaticoId:
         $ref: '#/definitions/models.Sabatico'
   models.SoporteSolicitud:
@@ -1455,8 +1326,8 @@ definitions:
       Id:
         type: integer
         format: int64
-      RolTerceroId:
-        $ref: '#/definitions/models.RolTercero'
+      RolUsuario:
+        type: string
       SolicitudId:
         $ref: '#/definitions/models.Solicitud'
       TerceroId:
@@ -1479,7 +1350,7 @@ definitions:
       Id:
         type: integer
         format: int64
-      TipoSolicitud:
+      Nombre:
         type: string
 tags:
 - name: estado_solicitud
@@ -1488,9 +1359,6 @@ tags:
 - name: historial_solicitud
   description: |
     HistorialSolicitudController operations for HistorialSolicitud
-- name: rol_tercero
-  description: |
-    RolTerceroController operations for RolTercero
 - name: solicitud
   description: |
     SolicitudController operations for Solicitud

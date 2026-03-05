@@ -10,13 +10,13 @@ import (
 )
 
 type SoporteSabatico struct {
-	Id                int         `orm:"column(id);pk;auto"`
-	DocumentoId       int         `orm:"column(documento_id)"`
-	Activo            bool        `orm:"column(activo)"`
-	FechaCreacion     string      `orm:"column(fecha_creacion);type(timestamp without time zone)"`
-	FechaModificacion string      `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
-	RolTerceroId      *RolTercero `orm:"column(rol_tercero_id);rel(fk)"`
-	SabaticoId        *Sabatico   `orm:"column(sabatico_id);rel(fk)"`
+	Id                int       `orm:"column(id);pk;auto"`
+	DocumentoId       int       `orm:"column(documento_id)"`
+	Activo            bool      `orm:"column(activo)"`
+	FechaCreacion     string    `orm:"column(fecha_creacion);type(timestamp without time zone)"`
+	FechaModificacion string    `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
+	RolUsuario        string    `orm:"column(rol_usuario)"`
+	SabaticoId        *Sabatico `orm:"column(sabatico_id);rel(fk)"`
 }
 
 func (t *SoporteSabatico) TableName() string {
