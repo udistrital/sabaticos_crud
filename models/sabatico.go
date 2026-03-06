@@ -13,8 +13,8 @@ type Sabatico struct {
 	Id                int             `orm:"column(id);pk;auto"`
 	TerceroId         int             `orm:"column(tercero_id)"`
 	Observaciones     string          `orm:"column(observaciones);null"`
-	FechaInicio       string      `orm:"column(fecha_inicio);type(timestamp without time zone)"`
-	FechaFin          string       `orm:"column(fecha_fin);type(timestamp without time zone)"`
+	FechaInicio       string          `orm:"column(fecha_inicio);type(timestamp without time zone)"`
+	FechaFin          string          `orm:"column(fecha_fin);type(timestamp without time zone)"`
 	Activo            bool            `orm:"column(activo)"`
 	FechaCreacion     string          `orm:"column(fecha_creacion);type(timestamp without time zone)"`
 	FechaModificacion string          `orm:"column(fecha_modificacion);type(timestamp without time zone)"`

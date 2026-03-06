@@ -9,9 +9,9 @@
 *.test
 *.out
 
-# Binary generado (como el que tienes: sabatico_crud)
-sabatico_crud
-sabatico_crud.exe
+# Binary generado (como el que tienes: sabaticos_crud)
+sabaticos_crud
+sabaticos_crud.exe
 
 # Carpeta bin opcional
 /bin/
@@ -23,6 +23,8 @@ sabatico_crud.exe
 # =========================
 go.work
 go.work.sum
+go.mod
+go.sum
 
 # =========================
 # Archivos temporales
@@ -78,8 +80,9 @@ Thumbs.db
 # =========================
 # Swagger generated files (opcional)
 # =========================
-swagger/swagger.json
-swagger/swagger.yaml
+swagger/**
+!swagger/swagger.json
+!swagger/swagger.yml
 
 # =========================
 # Test binary

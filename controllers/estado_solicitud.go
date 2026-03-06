@@ -8,7 +8,7 @@ import (
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
-	"github.com/udistrital/sabatico_crud/models"
+	"github.com/udistrital/sabaticos_crud/models"
 	"github.com/udistrital/utils_oas/time_bogota"
 )
 
