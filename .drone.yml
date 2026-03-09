@@ -26,6 +26,20 @@ steps:
     event:
     - push
 
+- name: build
+  image: golang:1.25
+  commands:
+    - GOOS=linux GOARCH=amd64 go build -o main
+  when:
+    branch:
+      - feature/*
+      - develop
+      - release/*
+      - hotfix/*
+      - master
+    event:
+      - push
+
 - name: go_run_test
   image: golang:1.25
   commands:
@@ -46,20 +60,6 @@ steps:
       - feature/*
       - develop
       - hotfix/*
-    event:
-      - push
-
-- name: build
-  image: golang:1.25
-  commands:
-    - GOOS=linux GOARCH=amd64 go build -o main
-  when:
-    branch:
-      - feature/*
-      - develop
-      - release/*
-      - hotfix/*
-      - master
     event:
       - push
 
