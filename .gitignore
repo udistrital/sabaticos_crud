@@ -23,8 +23,6 @@ sabaticos_crud.exe
 # =========================
 go.work
 go.work.sum
-go.mod
-go.sum
 
 # =========================
 # Archivos temporales
