@@ -29,7 +29,7 @@ func main() {
 		return
 	}
 
-	allowedOrigins := []string{"*.udistrital.edu.co"}
+	allowedOrigins := []string{"*"}
 	if beego.BConfig.RunMode == beego.DEV {
 		allowedOrigins = []string{"*"}
 		orm.Debug = true
