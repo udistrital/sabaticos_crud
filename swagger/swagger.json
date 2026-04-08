@@ -2008,6 +2008,10 @@
                 "TerceroId": {
                     "type": "integer",
                     "format": "int64"
+                },
+                "TipoDocumentoId": {
+                    "type": "integer",
+                    "format": "int64"
                 }
             }
         },
