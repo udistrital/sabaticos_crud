@@ -10,9 +10,9 @@ import (
 )
 
 type SoporteSolicitud struct {
-	Id          int `orm:"column(id);pk;auto"`
-	DocumentoId int `orm:"column(documento_id)"`
-	//TipoDocumentoId          *int                    `orm:"column(tipo_documento_id);null"`
+	Id                       int                     `orm:"column(id);pk;auto"`
+	DocumentoId              int                     `orm:"column(documento_id)"`
+	TipoDocumentoId          *int                    `orm:"column(tipo_documento_id);null"`
 	TerceroId                int                     `orm:"column(tercero_id)"`
 	Activo                   bool                    `orm:"column(activo)"`
 	FechaCreacion            string                  `orm:"column(fecha_creacion);type(timestamp without time zone)"`
