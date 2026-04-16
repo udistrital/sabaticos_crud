@@ -1,7 +1,8 @@
 swagger: "2.0"
 info:
   title: beego Test API
-  description: beego has a very cool tools to autogenerate documents for your API
+  description: |
+    beego has a very cool tools to autogenerate documents for your API
   version: 1.0.0
   termsOfService: http://beego.me/
   contact:
@@ -15,7 +16,9 @@ paths:
     get:
       tags:
       - estado_sabatico
-      description: get EstadoSabatico
+      description: |-
+        get EstadoSabatico
+        <br>
       operationId: EstadoSabaticoController.Get All
       parameters:
       - in: query
@@ -32,7 +35,8 @@ paths:
         type: string
       - in: query
         name: order
-        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
         type: string
       - in: query
         name: limit
@@ -52,7 +56,9 @@ paths:
     post:
       tags:
       - estado_sabatico
-      description: create EstadoSabatico
+      description: |-
+        create EstadoSabatico
+        <br>
       operationId: EstadoSabaticoController.Post
       parameters:
       - in: body
@@ -70,7 +76,9 @@ paths:
     get:
       tags:
       - estado_sabatico
-      description: get EstadoSabatico by id
+      description: |-
+        get EstadoSabatico by id
+        <br>
       operationId: EstadoSabaticoController.Get One
       parameters:
       - in: path
@@ -88,7 +96,9 @@ paths:
     put:
       tags:
       - estado_sabatico
-      description: update the EstadoSabatico
+      description: |-
+        update the EstadoSabatico
+        <br>
       operationId: EstadoSabaticoController.Put
       parameters:
       - in: path
@@ -112,7 +122,9 @@ paths:
     delete:
       tags:
       - estado_sabatico
-      description: delete the EstadoSabatico
+      description: |-
+        delete the EstadoSabatico
+        <br>
       operationId: EstadoSabaticoController.Delete
       parameters:
       - in: path
@@ -129,7 +141,9 @@ paths:
     get:
       tags:
       - estado_solicitud
-      description: get EstadoSolicitud
+      description: |-
+        get EstadoSolicitud
+        <br>
       operationId: EstadoSolicitudController.Get All
       parameters:
       - in: query
@@ -146,7 +160,8 @@ paths:
         type: string
       - in: query
         name: order
-        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
         type: string
       - in: query
         name: limit
@@ -166,7 +181,9 @@ paths:
     post:
       tags:
       - estado_solicitud
-      description: create EstadoSolicitud
+      description: |-
+        create EstadoSolicitud
+        <br>
       operationId: EstadoSolicitudController.Post
       parameters:
       - in: body
@@ -184,7 +201,9 @@ paths:
     get:
       tags:
       - estado_solicitud
-      description: get EstadoSolicitud by id
+      description: |-
+        get EstadoSolicitud by id
+        <br>
       operationId: EstadoSolicitudController.Get One
       parameters:
       - in: path
@@ -202,7 +221,9 @@ paths:
     put:
       tags:
       - estado_solicitud
-      description: update the EstadoSolicitud
+      description: |-
+        update the EstadoSolicitud
+        <br>
       operationId: EstadoSolicitudController.Put
       parameters:
       - in: path
@@ -226,7 +247,9 @@ paths:
     delete:
       tags:
       - estado_solicitud
-      description: delete the EstadoSolicitud
+      description: |-
+        delete the EstadoSolicitud
+        <br>
       operationId: EstadoSolicitudController.Delete
       parameters:
       - in: path
@@ -243,7 +266,9 @@ paths:
     get:
       tags:
       - estado_soporte_solicitud
-      description: get EstadoSoporteSolicitud
+      description: |-
+        get EstadoSoporteSolicitud
+        <br>
       operationId: EstadoSoporteSolicitudController.Get All
       parameters:
       - in: query
@@ -260,7 +285,8 @@ paths:
         type: string
       - in: query
         name: order
-        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
         type: string
       - in: query
         name: limit
@@ -280,7 +306,9 @@ paths:
     post:
       tags:
       - estado_soporte_solicitud
-      description: create EstadoSoporteSolicitud
+      description: |-
+        create EstadoSoporteSolicitud
+        <br>
       operationId: EstadoSoporteSolicitudController.Post
       parameters:
       - in: body
@@ -298,7 +326,9 @@ paths:
     get:
       tags:
       - estado_soporte_solicitud
-      description: get EstadoSoporteSolicitud by id
+      description: |-
+        get EstadoSoporteSolicitud by id
+        <br>
       operationId: EstadoSoporteSolicitudController.Get One
       parameters:
       - in: path
@@ -316,7 +346,9 @@ paths:
     put:
       tags:
       - estado_soporte_solicitud
-      description: update the EstadoSoporteSolicitud
+      description: |-
+        update the EstadoSoporteSolicitud
+        <br>
       operationId: EstadoSoporteSolicitudController.Put
       parameters:
       - in: path
@@ -340,7 +372,9 @@ paths:
     delete:
       tags:
       - estado_soporte_solicitud
-      description: delete the EstadoSoporteSolicitud
+      description: |-
+        delete the EstadoSoporteSolicitud
+        <br>
       operationId: EstadoSoporteSolicitudController.Delete
       parameters:
       - in: path
@@ -357,7 +391,9 @@ paths:
     get:
       tags:
       - formulario_solicitud
-      description: get FormularioSolicitud
+      description: |-
+        get FormularioSolicitud
+        <br>
       operationId: FormularioSolicitudController.Get All
       parameters:
       - in: query
@@ -374,7 +410,8 @@ paths:
         type: string
       - in: query
         name: order
-        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
         type: string
       - in: query
         name: limit
@@ -394,7 +431,9 @@ paths:
     post:
       tags:
       - formulario_solicitud
-      description: create FormularioSolicitud
+      description: |-
+        create FormularioSolicitud
+        <br>
       operationId: FormularioSolicitudController.Post
       parameters:
       - in: body
@@ -412,7 +451,9 @@ paths:
     get:
       tags:
       - formulario_solicitud
-      description: get FormularioSolicitud by id
+      description: |-
+        get FormularioSolicitud by id
+        <br>
       operationId: FormularioSolicitudController.Get One
       parameters:
       - in: path
@@ -430,7 +471,9 @@ paths:
     put:
       tags:
       - formulario_solicitud
-      description: update the FormularioSolicitud
+      description: |-
+        update the FormularioSolicitud
+        <br>
       operationId: FormularioSolicitudController.Put
       parameters:
       - in: path
@@ -454,7 +497,9 @@ paths:
     delete:
       tags:
       - formulario_solicitud
-      description: delete the FormularioSolicitud
+      description: |-
+        delete the FormularioSolicitud
+        <br>
       operationId: FormularioSolicitudController.Delete
       parameters:
       - in: path
@@ -471,7 +516,9 @@ paths:
     get:
       tags:
       - historial_solicitud
-      description: get HistorialSolicitud
+      description: |-
+        get HistorialSolicitud
+        <br>
       operationId: HistorialSolicitudController.Get All
       parameters:
       - in: query
@@ -488,7 +535,8 @@ paths:
         type: string
       - in: query
         name: order
-        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
         type: string
       - in: query
         name: limit
@@ -508,7 +556,9 @@ paths:
     post:
       tags:
       - historial_solicitud
-      description: create HistorialSolicitud
+      description: |-
+        create HistorialSolicitud
+        <br>
       operationId: HistorialSolicitudController.Post
       parameters:
       - in: body
@@ -526,7 +576,9 @@ paths:
     get:
       tags:
       - historial_solicitud
-      description: get HistorialSolicitud by id
+      description: |-
+        get HistorialSolicitud by id
+        <br>
       operationId: HistorialSolicitudController.Get One
       parameters:
       - in: path
@@ -544,7 +596,9 @@ paths:
     put:
       tags:
       - historial_solicitud
-      description: update the HistorialSolicitud
+      description: |-
+        update the HistorialSolicitud
+        <br>
       operationId: HistorialSolicitudController.Put
       parameters:
       - in: path
@@ -568,7 +622,9 @@ paths:
     delete:
       tags:
       - historial_solicitud
-      description: delete the HistorialSolicitud
+      description: |-
+        delete the HistorialSolicitud
+        <br>
       operationId: HistorialSolicitudController.Delete
       parameters:
       - in: path
@@ -585,7 +641,9 @@ paths:
     get:
       tags:
       - sabatico
-      description: get Sabatico
+      description: |-
+        get Sabatico
+        <br>
       operationId: SabaticoController.Get All
       parameters:
       - in: query
@@ -602,7 +660,8 @@ paths:
         type: string
       - in: query
         name: order
-        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
         type: string
       - in: query
         name: limit
@@ -622,7 +681,9 @@ paths:
     post:
       tags:
       - sabatico
-      description: create Sabatico
+      description: |-
+        create Sabatico
+        <br>
       operationId: SabaticoController.Post
       parameters:
       - in: body
@@ -640,7 +701,9 @@ paths:
     get:
       tags:
       - sabatico
-      description: get Sabatico by id
+      description: |-
+        get Sabatico by id
+        <br>
       operationId: SabaticoController.Get One
       parameters:
       - in: path
@@ -658,7 +721,9 @@ paths:
     put:
       tags:
       - sabatico
-      description: update the Sabatico
+      description: |-
+        update the Sabatico
+        <br>
       operationId: SabaticoController.Put
       parameters:
       - in: path
@@ -682,7 +747,9 @@ paths:
     delete:
       tags:
       - sabatico
-      description: delete the Sabatico
+      description: |-
+        delete the Sabatico
+        <br>
       operationId: SabaticoController.Delete
       parameters:
       - in: path
@@ -699,7 +766,9 @@ paths:
     get:
       tags:
       - solicitud
-      description: get Solicitud
+      description: |-
+        get Solicitud
+        <br>
       operationId: SolicitudController.Get All
       parameters:
       - in: query
@@ -716,7 +785,8 @@ paths:
         type: string
       - in: query
         name: order
-        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
         type: string
       - in: query
         name: limit
@@ -736,7 +806,9 @@ paths:
     post:
       tags:
       - solicitud
-      description: create Solicitud
+      description: |-
+        create Solicitud
+        <br>
       operationId: SolicitudController.Post
       parameters:
       - in: body
@@ -754,7 +826,9 @@ paths:
     get:
       tags:
       - solicitud
-      description: get Solicitud by id
+      description: |-
+        get Solicitud by id
+        <br>
       operationId: SolicitudController.Get One
       parameters:
       - in: path
@@ -772,7 +846,9 @@ paths:
     put:
       tags:
       - solicitud
-      description: update the Solicitud
+      description: |-
+        update the Solicitud
+        <br>
       operationId: SolicitudController.Put
       parameters:
       - in: path
@@ -796,7 +872,9 @@ paths:
     delete:
       tags:
       - solicitud
-      description: delete the Solicitud
+      description: |-
+        delete the Solicitud
+        <br>
       operationId: SolicitudController.Delete
       parameters:
       - in: path
@@ -813,7 +891,9 @@ paths:
     get:
       tags:
       - soporte_sabatico
-      description: get SoporteSabatico
+      description: |-
+        get SoporteSabatico
+        <br>
       operationId: SoporteSabaticoController.Get All
       parameters:
       - in: query
@@ -830,7 +910,8 @@ paths:
         type: string
       - in: query
         name: order
-        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
         type: string
       - in: query
         name: limit
@@ -850,7 +931,9 @@ paths:
     post:
       tags:
       - soporte_sabatico
-      description: create SoporteSabatico
+      description: |-
+        create SoporteSabatico
+        <br>
       operationId: SoporteSabaticoController.Post
       parameters:
       - in: body
@@ -868,7 +951,9 @@ paths:
     get:
       tags:
       - soporte_sabatico
-      description: get SoporteSabatico by id
+      description: |-
+        get SoporteSabatico by id
+        <br>
       operationId: SoporteSabaticoController.Get One
       parameters:
       - in: path
@@ -886,7 +971,9 @@ paths:
     put:
       tags:
       - soporte_sabatico
-      description: update the SoporteSabatico
+      description: |-
+        update the SoporteSabatico
+        <br>
       operationId: SoporteSabaticoController.Put
       parameters:
       - in: path
@@ -910,7 +997,9 @@ paths:
     delete:
       tags:
       - soporte_sabatico
-      description: delete the SoporteSabatico
+      description: |-
+        delete the SoporteSabatico
+        <br>
       operationId: SoporteSabaticoController.Delete
       parameters:
       - in: path
@@ -927,7 +1016,9 @@ paths:
     get:
       tags:
       - soporte_solicitud
-      description: get SoporteSolicitud
+      description: |-
+        get SoporteSolicitud
+        <br>
       operationId: SoporteSolicitudController.Get All
       parameters:
       - in: query
@@ -944,7 +1035,8 @@ paths:
         type: string
       - in: query
         name: order
-        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
         type: string
       - in: query
         name: limit
@@ -964,7 +1056,9 @@ paths:
     post:
       tags:
       - soporte_solicitud
-      description: create SoporteSolicitud
+      description: |-
+        create SoporteSolicitud
+        <br>
       operationId: SoporteSolicitudController.Post
       parameters:
       - in: body
@@ -982,7 +1076,9 @@ paths:
     get:
       tags:
       - soporte_solicitud
-      description: get SoporteSolicitud by id
+      description: |-
+        get SoporteSolicitud by id
+        <br>
       operationId: SoporteSolicitudController.Get One
       parameters:
       - in: path
@@ -1000,7 +1096,9 @@ paths:
     put:
       tags:
       - soporte_solicitud
-      description: update the SoporteSolicitud
+      description: |-
+        update the SoporteSolicitud
+        <br>
       operationId: SoporteSolicitudController.Put
       parameters:
       - in: path
@@ -1024,7 +1122,9 @@ paths:
     delete:
       tags:
       - soporte_solicitud
-      description: delete the SoporteSolicitud
+      description: |-
+        delete the SoporteSolicitud
+        <br>
       operationId: SoporteSolicitudController.Delete
       parameters:
       - in: path
@@ -1041,7 +1141,9 @@ paths:
     get:
       tags:
       - tipo_solicitud
-      description: get TipoSolicitud
+      description: |-
+        get TipoSolicitud
+        <br>
       operationId: TipoSolicitudController.Get All
       parameters:
       - in: query
@@ -1058,7 +1160,8 @@ paths:
         type: string
       - in: query
         name: order
-        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
         type: string
       - in: query
         name: limit
@@ -1078,7 +1181,9 @@ paths:
     post:
       tags:
       - tipo_solicitud
-      description: create TipoSolicitud
+      description: |-
+        create TipoSolicitud
+        <br>
       operationId: TipoSolicitudController.Post
       parameters:
       - in: body
@@ -1096,7 +1201,9 @@ paths:
     get:
       tags:
       - tipo_solicitud
-      description: get TipoSolicitud by id
+      description: |-
+        get TipoSolicitud by id
+        <br>
       operationId: TipoSolicitudController.Get One
       parameters:
       - in: path
@@ -1114,7 +1221,9 @@ paths:
     put:
       tags:
       - tipo_solicitud
-      description: update the TipoSolicitud
+      description: |-
+        update the TipoSolicitud
+        <br>
       operationId: TipoSolicitudController.Put
       parameters:
       - in: path
@@ -1138,7 +1247,9 @@ paths:
     delete:
       tags:
       - tipo_solicitud
-      description: delete the TipoSolicitud
+      description: |-
+        delete the TipoSolicitud
+        <br>
       operationId: TipoSolicitudController.Delete
       parameters:
       - in: path

@@ -51,76 +51,95 @@ func GetAllEstadoSabatico(query map[string]string, fields []string, sortby []str
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
 	qs := o.QueryTable(new(EstadoSabatico)).RelatedSel()
-	// query k=v
+
+	qs = applyEstadoSabaticoFilters(qs, query)
+
+	sortFields, err := buildEstadoSabaticoSortFields(sortby, order)
+	if err != nil {
+		return nil, err
+	}
+
+	qs = qs.OrderBy(sortFields...)
+
+	var l []EstadoSabatico
+	if _, err = qs.Limit(limit, offset).All(&l, fields...); err != nil {
+		return nil, err
+	}
+
+	if len(fields) == 0 {
+		for _, v := range l {
+			ml = append(ml, v)
+		}
+		return ml, nil
+	}
+
+	for _, v := range l {
+		m := make(map[string]interface{})
+		val := reflect.ValueOf(v)
+		for _, fname := range fields {
+			m[fname] = val.FieldByName(fname).Interface()
+		}
+		ml = append(ml, m)
+	}
+
+	return ml, nil
+}
+
+func applyEstadoSabaticoFilters(qs orm.QuerySeter, query map[string]string) orm.QuerySeter {
 	for k, v := range query {
-		// rewrite dot-notation to Object__Attribute
 		k = strings.Replace(k, ".", "__", -1)
 		if strings.Contains(k, "isnull") {
-			qs = qs.Filter(k, (v == "true" || v == "1"))
+			qs = qs.Filter(k, v == "true" || v == "1")
 		} else {
 			qs = qs.Filter(k, v)
 		}
 	}
-	// order by:
+	return qs
+}
+
+func buildEstadoSabaticoSortFields(sortby []string, order []string) ([]string, error) {
 	var sortFields []string
-	if len(sortby) != 0 {
-		if len(sortby) == len(order) {
-			// 1) for each sort field, there is an associated order
-			for i, v := range sortby {
-				orderby := ""
-				if order[i] == "desc" {
-					orderby = "-" + v
-				} else if order[i] == "asc" {
-					orderby = v
-				} else {
-					return nil, errors.New("Error: Invalid order. Must be either [asc|desc]")
-				}
-				sortFields = append(sortFields, orderby)
-			}
-			qs = qs.OrderBy(sortFields...)
-		} else if len(sortby) != len(order) && len(order) == 1 {
-			// 2) there is exactly one order, all the sorted fields will be sorted by this order
-			for _, v := range sortby {
-				orderby := ""
-				if order[0] == "desc" {
-					orderby = "-" + v
-				} else if order[0] == "asc" {
-					orderby = v
-				} else {
-					return nil, errors.New("Error: Invalid order. Must be either [asc|desc]")
-				}
-				sortFields = append(sortFields, orderby)
-			}
-		} else if len(sortby) != len(order) && len(order) != 1 {
-			return nil, errors.New("Error: 'sortby', 'order' sizes mismatch or 'order' size is not 1")
-		}
-	} else {
+
+	if len(sortby) == 0 {
 		if len(order) != 0 {
 			return nil, errors.New("Error: unused 'order' fields")
 		}
+		return sortFields, nil
 	}
 
-	var l []EstadoSabatico
-	qs = qs.OrderBy(sortFields...)
-	if _, err = qs.Limit(limit, offset).All(&l, fields...); err == nil {
-		if len(fields) == 0 {
-			for _, v := range l {
-				ml = append(ml, v)
+	if len(sortby) == len(order) {
+		for i, v := range sortby {
+			orderby, err := buildEstadoSabaticoOrder(v, order[i])
+			if err != nil {
+				return nil, err
 			}
-		} else {
-			// trim unused fields
-			for _, v := range l {
-				m := make(map[string]interface{})
-				val := reflect.ValueOf(v)
-				for _, fname := range fields {
-					m[fname] = val.FieldByName(fname).Interface()
-				}
-				ml = append(ml, m)
-			}
+			sortFields = append(sortFields, orderby)
 		}
-		return ml, nil
+		return sortFields, nil
 	}
-	return nil, err
+
+	if len(order) == 1 {
+		for _, v := range sortby {
+			orderby, err := buildEstadoSabaticoOrder(v, order[0])
+			if err != nil {
+				return nil, err
+			}
+			sortFields = append(sortFields, orderby)
+		}
+		return sortFields, nil
+	}
+
+	return nil, errors.New("Error: 'sortby', 'order' sizes mismatch or 'order' size is not 1")
+}
+
+func buildEstadoSabaticoOrder(field string, direction string) (string, error) {
+	if direction == "desc" {
+		return "-" + field, nil
+	}
+	if direction == "asc" {
+		return field, nil
+	}
+	return "", errors.New("Error: Invalid order. Must be either [asc|desc]")
 }
 
 // UpdateEstadoSabatico updates EstadoSabatico by Id and returns error if
