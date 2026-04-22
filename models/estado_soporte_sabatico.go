@@ -9,50 +9,48 @@ import (
 	"github.com/astaxie/beego/orm"
 )
 
-type Sabatico struct {
+type EstadoSoporteSabatico struct {
 	Id                int    `orm:"column(id);pk;auto"`
-	TerceroId         int    `orm:"column(tercero_id)"`
-	Observaciones     string `orm:"column(observaciones);null"`
-	FechaInicio       string `orm:"column(fecha_inicio);type(timestamp without time zone)"`
-	FechaFin          string `orm:"column(fecha_fin);type(timestamp without time zone)"`
+	CodigoAbreviacion string `orm:"column(codigo_abreviacion)"`
+	NombreEstado      string `orm:"column(nombre_estado);size(50)"`
 	Activo            bool   `orm:"column(activo)"`
 	FechaCreacion     string `orm:"column(fecha_creacion);type(timestamp without time zone)"`
 	FechaModificacion string `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
 }
 
-func (t *Sabatico) TableName() string {
-	return "sabatico"
+func (t *EstadoSoporteSabatico) TableName() string {
+	return "estado_soporte_sabatico"
 }
 
 func init() {
-	orm.RegisterModel(new(Sabatico))
+	orm.RegisterModel(new(EstadoSoporteSabatico))
 }
 
-// AddSabatico insert a new Sabatico into database and returns
+// AddEstadoSoporteSabatico insert a new EstadoSoporteSabatico into database and returns
 // last inserted Id on success.
-func AddSabatico(m *Sabatico) (id int64, err error) {
+func AddEstadoSoporteSabatico(m *EstadoSoporteSabatico) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
 	return
 }
 
-// GetSabaticoById retrieves Sabatico by Id. Returns error if
+// GetEstadoSoporteSabaticoById retrieves EstadoSoporteSabatico by Id. Returns error if
 // Id doesn't exist
-func GetSabaticoById(id int) (v *Sabatico, err error) {
+func GetEstadoSoporteSabaticoById(id int) (v *EstadoSoporteSabatico, err error) {
 	o := orm.NewOrm()
-	v = &Sabatico{Id: id}
+	v = &EstadoSoporteSabatico{Id: id}
 	if err = o.Read(v); err == nil {
 		return v, nil
 	}
 	return nil, err
 }
 
-// GetAllSabatico retrieves all Sabatico matches certain condition. Returns empty list if
+// GetAllEstadoSoporteSabatico retrieves all EstadoSoporteSabatico matches certain condition. Returns empty list if
 // no records exist
-func GetAllSabatico(query map[string]string, fields []string, sortby []string, order []string,
+func GetAllEstadoSoporteSabatico(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
-	qs := o.QueryTable(new(Sabatico)).RelatedSel()
+	qs := o.QueryTable(new(EstadoSoporteSabatico))
 	// query k=v
 	for k, v := range query {
 		// rewrite dot-notation to Object__Attribute
@@ -102,7 +100,7 @@ func GetAllSabatico(query map[string]string, fields []string, sortby []string, o
 		}
 	}
 
-	var l []Sabatico
+	var l []EstadoSoporteSabatico
 	qs = qs.OrderBy(sortFields...)
 	if _, err = qs.Limit(limit, offset).All(&l, fields...); err == nil {
 		if len(fields) == 0 {
@@ -125,11 +123,11 @@ func GetAllSabatico(query map[string]string, fields []string, sortby []string, o
 	return nil, err
 }
 
-// UpdateSabatico updates Sabatico by Id and returns error if
+// UpdateEstadoSoporteSabatico updates EstadoSoporteSabatico by Id and returns error if
 // the record to be updated doesn't exist
-func UpdateSabaticoById(m *Sabatico) (err error) {
+func UpdateEstadoSoporteSabaticoById(m *EstadoSoporteSabatico) (err error) {
 	o := orm.NewOrm()
-	v := Sabatico{Id: m.Id}
+	v := EstadoSoporteSabatico{Id: m.Id}
 	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		var num int64
@@ -140,15 +138,15 @@ func UpdateSabaticoById(m *Sabatico) (err error) {
 	return
 }
 
-// DeleteSabatico deletes Sabatico by Id and returns error if
+// DeleteEstadoSoporteSabatico deletes EstadoSoporteSabatico by Id and returns error if
 // the record to be deleted doesn't exist
-func DeleteSabatico(id int) (err error) {
+func DeleteEstadoSoporteSabatico(id int) (err error) {
 	o := orm.NewOrm()
-	v := Sabatico{Id: id}
+	v := EstadoSoporteSabatico{Id: id}
 	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		var num int64
-		if num, err = o.Delete(&Sabatico{Id: id}); err == nil {
+		if num, err = o.Delete(&EstadoSoporteSabatico{Id: id}); err == nil {
 			fmt.Println("Number of records deleted in database:", num)
 		}
 	}
