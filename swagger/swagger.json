@@ -885,7 +885,7 @@
                 "tags": [
                     "historial_estado_sabatico"
                 ],
-                "description": "get HistorialSabatico",
+                "description": "get HistorialEstadoSabatico",
                 "operationId": "HistorialEstadoSabaticoController.Get All",
                 "parameters": [
                     {
@@ -929,7 +929,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.HistorialSabatico"
+                            "$ref": "#/definitions/models.HistorialEstadoSabatico"
                         }
                     },
                     "403": {
@@ -941,22 +941,22 @@
                 "tags": [
                     "historial_estado_sabatico"
                 ],
-                "description": "create HistorialSabatico",
+                "description": "create HistorialEstadoSabatico",
                 "operationId": "HistorialEstadoSabaticoController.Post",
                 "parameters": [
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "body for HistorialSabatico content",
+                        "description": "body for HistorialEstadoSabatico content",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.HistorialSabatico"
+                            "$ref": "#/definitions/models.HistorialEstadoSabatico"
                         }
                     }
                 ],
                 "responses": {
                     "201": {
-                        "description": "{int} models.HistorialSabatico"
+                        "description": "{int} models.HistorialEstadoSabatico"
                     },
                     "403": {
                         "description": "body is empty"
@@ -969,7 +969,7 @@
                 "tags": [
                     "historial_estado_sabatico"
                 ],
-                "description": "get HistorialSabatico by id",
+                "description": "get HistorialEstadoSabatico by id",
                 "operationId": "HistorialEstadoSabaticoController.Get One",
                 "parameters": [
                     {
@@ -984,7 +984,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.HistorialSabatico"
+                            "$ref": "#/definitions/models.HistorialEstadoSabatico"
                         }
                     },
                     "403": {
@@ -996,7 +996,7 @@
                 "tags": [
                     "historial_estado_sabatico"
                 ],
-                "description": "update the HistorialSabatico",
+                "description": "update the HistorialEstadoSabatico",
                 "operationId": "HistorialEstadoSabaticoController.Put",
                 "parameters": [
                     {
@@ -1009,10 +1009,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "body for HistorialSabatico content",
+                        "description": "body for HistorialEstadoSabatico content",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.HistorialSabatico"
+                            "$ref": "#/definitions/models.HistorialEstadoSabatico"
                         }
                     }
                 ],
@@ -1020,7 +1020,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.HistorialSabatico"
+                            "$ref": "#/definitions/models.HistorialEstadoSabatico"
                         }
                     },
                     "403": {
@@ -1032,7 +1032,7 @@
                 "tags": [
                     "historial_estado_sabatico"
                 ],
-                "description": "delete the HistorialSabatico",
+                "description": "delete the HistorialEstadoSabatico",
                 "operationId": "HistorialEstadoSabaticoController.Delete",
                 "parameters": [
                     {
@@ -2221,9 +2221,37 @@
                 }
             }
         },
-        "models.HistorialSabatico": {
-            "title": "HistorialSabatico",
-            "type": "object"
+        "models.HistorialEstadoSabatico": {
+            "title": "HistorialEstadoSabatico",
+            "type": "object",
+            "properties": {
+                "Activo": {
+                    "type": "boolean"
+                },
+                "EstadoSabaticoId": {
+                    "$ref": "#/definitions/models.EstadoSabatico"
+                },
+                "FechaCreacion": {
+                    "type": "string"
+                },
+                "FechaModificacion": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Justificacion": {
+                    "type": "string"
+                },
+                "SabaticoId": {
+                    "$ref": "#/definitions/models.Sabatico"
+                },
+                "TerceroId": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
         },
         "models.HistorialSolicitud": {
             "title": "HistorialSolicitud",
