@@ -361,6 +361,179 @@
                 }
             }
         },
+        "/estado_soporte_sabatico/": {
+            "get": {
+                "tags": [
+                    "estado_soporte_sabatico"
+                ],
+                "description": "get EstadoSoporteSabatico",
+                "operationId": "EstadoSoporteSabaticoController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.EstadoSoporteSabatico"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "estado_soporte_sabatico"
+                ],
+                "description": "create EstadoSoporteSabatico",
+                "operationId": "EstadoSoporteSabaticoController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for EstadoSoporteSabatico content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EstadoSoporteSabatico"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.EstadoSoporteSabatico"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/estado_soporte_sabatico/{id}": {
+            "get": {
+                "tags": [
+                    "estado_soporte_sabatico"
+                ],
+                "description": "get EstadoSoporteSabatico by id",
+                "operationId": "EstadoSoporteSabaticoController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.EstadoSoporteSabatico"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "estado_soporte_sabatico"
+                ],
+                "description": "update the EstadoSoporteSabatico",
+                "operationId": "EstadoSoporteSabaticoController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for EstadoSoporteSabatico content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EstadoSoporteSabatico"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.EstadoSoporteSabatico"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "estado_soporte_sabatico"
+                ],
+                "description": "delete the EstadoSoporteSabatico",
+                "operationId": "EstadoSoporteSabaticoController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
         "/estado_soporte_solicitud/": {
             "get": {
                 "tags": [
@@ -688,6 +861,179 @@
                 ],
                 "description": "delete the FormularioSolicitud",
                 "operationId": "FormularioSolicitudController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/historial_estado_sabatico/": {
+            "get": {
+                "tags": [
+                    "historial_estado_sabatico"
+                ],
+                "description": "get HistorialSabatico",
+                "operationId": "HistorialEstadoSabaticoController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.HistorialSabatico"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "historial_estado_sabatico"
+                ],
+                "description": "create HistorialSabatico",
+                "operationId": "HistorialEstadoSabaticoController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for HistorialSabatico content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.HistorialSabatico"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.HistorialSabatico"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/historial_estado_sabatico/{id}": {
+            "get": {
+                "tags": [
+                    "historial_estado_sabatico"
+                ],
+                "description": "get HistorialSabatico by id",
+                "operationId": "HistorialEstadoSabaticoController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.HistorialSabatico"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "historial_estado_sabatico"
+                ],
+                "description": "update the HistorialSabatico",
+                "operationId": "HistorialEstadoSabaticoController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for HistorialSabatico content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.HistorialSabatico"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.HistorialSabatico"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "historial_estado_sabatico"
+                ],
+                "description": "delete the HistorialSabatico",
+                "operationId": "HistorialEstadoSabaticoController.Delete",
                 "parameters": [
                     {
                         "in": "path",
@@ -1800,6 +2146,31 @@
                 }
             }
         },
+        "models.EstadoSoporteSabatico": {
+            "title": "EstadoSoporteSabatico",
+            "type": "object",
+            "properties": {
+                "Activo": {
+                    "type": "boolean"
+                },
+                "CodigoAbreviacion": {
+                    "type": "string"
+                },
+                "FechaCreacion": {
+                    "type": "string"
+                },
+                "FechaModificacion": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "NombreEstado": {
+                    "type": "string"
+                }
+            }
+        },
         "models.EstadoSoporteSolicitud": {
             "title": "EstadoSoporteSolicitud",
             "type": "object",
@@ -1850,6 +2221,10 @@
                 }
             }
         },
+        "models.HistorialSabatico": {
+            "title": "HistorialSabatico",
+            "type": "object"
+        },
         "models.HistorialSolicitud": {
             "title": "HistorialSolicitud",
             "type": "object",
@@ -1888,9 +2263,6 @@
             "properties": {
                 "Activo": {
                     "type": "boolean"
-                },
-                "EstadoSabaticoId": {
-                    "$ref": "#/definitions/models.EstadoSabatico"
                 },
                 "FechaCreacion": {
                     "type": "string"
@@ -1956,6 +2328,9 @@
                 "DocumentoId": {
                     "type": "integer",
                     "format": "int64"
+                },
+                "EstadoSoporteSabaticoId": {
+                    "$ref": "#/definitions/models.EstadoSoporteSabatico"
                 },
                 "FechaCreacion": {
                     "type": "string"
@@ -2084,6 +2459,14 @@
         {
             "name": "formulario_solicitud",
             "description": "FormularioSolicitudController operations for FormularioSolicitud\n"
+        },
+        {
+            "name": "estado_soporte_sabatico",
+            "description": "EstadoSoporteSabaticoController operations for EstadoSoporteSabatico\n"
+        },
+        {
+            "name": "historial_estado_sabatico",
+            "description": "HistorialEstadoSabaticoController operations for HistorialEstadoSabatico\n"
         }
     ]
 }
