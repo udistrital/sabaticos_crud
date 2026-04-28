@@ -12,13 +12,13 @@ import (
 	"github.com/udistrital/utils_oas/time_bogota"
 )
 
-// HistorialSabaticoController operations for HistorialSabatico
-type HistorialSabaticoController struct {
+// HistorialEstadoSabaticoController operations for HistorialEstadoSabatico
+type HistorialEstadoSabaticoController struct {
 	beego.Controller
 }
 
 // URLMapping ...
-func (c *HistorialSabaticoController) URLMapping() {
+func (c *HistorialEstadoSabaticoController) URLMapping() {
 	c.Mapping("Post", c.Post)
 	c.Mapping("GetOne", c.GetOne)
 	c.Mapping("GetAll", c.GetAll)
@@ -33,12 +33,12 @@ func (c *HistorialSabaticoController) URLMapping() {
 // @Success 201 {int} models.HistorialSabatico
 // @Failure 403 body is empty
 // @router / [post]
-func (c *HistorialSabaticoController) Post() {
-	var v models.HistorialSabatico
+func (c *HistorialEstadoSabaticoController) Post() {
+	var v models.HistorialEstadoSabatico
 	v.FechaCreacion = time_bogota.TiempoBogotaFormato()
 	v.FechaModificacion = time_bogota.TiempoBogotaFormato()
 	if err := json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
-		if _, err := models.AddHistorialSabatico(&v); err == nil {
+		if _, err := models.AddHistorialEstadoSabatico(&v); err == nil {
 			c.Ctx.Output.SetStatus(201)
 			c.Data["json"] = map[string]interface{}{"Sucess": true, "Status": "201", "Message": "Registration successful", "Type": "success", "Data": v}
 		} else {
@@ -61,10 +61,10 @@ func (c *HistorialSabaticoController) Post() {
 // @Success 200 {object} models.HistorialSabatico
 // @Failure 403 :id is empty
 // @router /:id [get]
-func (c *HistorialSabaticoController) GetOne() {
+func (c *HistorialEstadoSabaticoController) GetOne() {
 	idStr := c.Ctx.Input.Param(":id")
 	id, _ := strconv.Atoi(idStr)
-	v, err := models.GetHistorialSabaticoById(id)
+	v, err := models.GetHistorialEstadoSabaticoById(id)
 	if err != nil {
 		logs.Error(err)
 		c.Ctx.Output.SetStatus(400)
@@ -87,7 +87,7 @@ func (c *HistorialSabaticoController) GetOne() {
 // @Success 200 {object} models.HistorialSabatico
 // @Failure 403
 // @router / [get]
-func (c *HistorialSabaticoController) GetAll() {
+func (c *HistorialEstadoSabaticoController) GetAll() {
 	var fields []string
 	var sortby []string
 	var order []string
@@ -129,7 +129,7 @@ func (c *HistorialSabaticoController) GetAll() {
 		}
 	}
 
-	l, err := models.GetAllHistorialSabatico(query, fields, sortby, order, offset, limit)
+	l, err := models.GetAllHistorialEstadoSabatico(query, fields, sortby, order, offset, limit)
 	if err != nil {
 		logs.Error(err)
 		c.Ctx.Output.SetStatus(400)
@@ -148,14 +148,14 @@ func (c *HistorialSabaticoController) GetAll() {
 // @Success 200 {object} models.HistorialSabatico
 // @Failure 403 :id is not int
 // @router /:id [put]
-func (c *HistorialSabaticoController) Put() {
+func (c *HistorialEstadoSabaticoController) Put() {
 	idStr := c.Ctx.Input.Param(":id")
 	id, _ := strconv.Atoi(idStr)
-	v := models.HistorialSabatico{Id: id}
+	v := models.HistorialEstadoSabatico{Id: id}
 	if err := json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
 		v.FechaCreacion = time_bogota.TiempoCorreccionFormato(v.FechaCreacion)
 		v.FechaModificacion = time_bogota.TiempoBogotaFormato()
-		if err := models.UpdateHistorialSabaticoById(&v); err == nil {
+		if err := models.UpdateHistorialEstadoSabaticoById(&v); err == nil {
 			c.Data["json"] = map[string]interface{}{"Sucess": true, "Status": "200", "Message": "Update successful", "Type": "success", "Data": v}
 		} else {
 			logs.Error(err)
@@ -177,10 +177,10 @@ func (c *HistorialSabaticoController) Put() {
 // @Success 200 {string} delete success!
 // @Failure 403 id is empty
 // @router /:id [delete]
-func (c *HistorialSabaticoController) Delete() {
+func (c *HistorialEstadoSabaticoController) Delete() {
 	idStr := c.Ctx.Input.Param(":id")
 	id, _ := strconv.Atoi(idStr)
-	if err := models.DeleteHistorialSabatico(id); err == nil {
+	if err := models.DeleteHistorialEstadoSabatico(id); err == nil {
 		d := map[string]interface{}{"Id": id}
 		c.Data["json"] = map[string]interface{}{"Sucess": true, "Status": "200", "Message": "Delete successful", "Type": "success", "Data": d}
 	} else {

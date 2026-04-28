@@ -82,9 +82,9 @@ func init() {
 			),
 		),
 
-		beego.NSNamespace("/historial_sabatico",
+		beego.NSNamespace("/historial_estado_sabatico",
 			beego.NSInclude(
-				&controllers.HistorialSabaticoController{},
+				&controllers.HistorialEstadoSabaticoController{},
 			),
 		),
 	)

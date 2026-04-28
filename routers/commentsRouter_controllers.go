@@ -232,7 +232,7 @@ func init() {
 			Filters:          nil,
 			Params:           nil})
 
-	beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialSabaticoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialSabaticoController"],
+	beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialEstadoSabaticoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialEstadoSabaticoController"],
 		beego.ControllerComments{
 			Method:           "Post",
 			Router:           "/",
@@ -241,7 +241,7 @@ func init() {
 			Filters:          nil,
 			Params:           nil})
 
-	beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialSabaticoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialSabaticoController"],
+	beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialEstadoSabaticoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialEstadoSabaticoController"],
 		beego.ControllerComments{
 			Method:           "GetAll",
 			Router:           "/",
@@ -250,7 +250,7 @@ func init() {
 			Filters:          nil,
 			Params:           nil})
 
-	beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialSabaticoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialSabaticoController"],
+	beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialEstadoSabaticoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialEstadoSabaticoController"],
 		beego.ControllerComments{
 			Method:           "GetOne",
 			Router:           "/:id",
@@ -259,7 +259,7 @@ func init() {
 			Filters:          nil,
 			Params:           nil})
 
-	beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialSabaticoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialSabaticoController"],
+	beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialEstadoSabaticoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialEstadoSabaticoController"],
 		beego.ControllerComments{
 			Method:           "Put",
 			Router:           "/:id",
@@ -268,7 +268,7 @@ func init() {
 			Filters:          nil,
 			Params:           nil})
 
-	beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialSabaticoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialSabaticoController"],
+	beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialEstadoSabaticoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/sabaticos_crud/controllers:HistorialEstadoSabaticoController"],
 		beego.ControllerComments{
 			Method:           "Delete",
 			Router:           "/:id",
