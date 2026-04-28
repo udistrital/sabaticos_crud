@@ -75,6 +75,18 @@ func init() {
 				&controllers.FormularioSolicitudController{},
 			),
 		),
+
+		beego.NSNamespace("/estado_soporte_sabatico",
+			beego.NSInclude(
+				&controllers.EstadoSoporteSabaticoController{},
+			),
+		),
+
+		beego.NSNamespace("/historial_estado_sabatico",
+			beego.NSInclude(
+				&controllers.HistorialEstadoSabaticoController{},
+			),
+		),
 	)
 	beego.AddNamespace(ns)
 }
