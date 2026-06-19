@@ -50,13 +50,10 @@ func main() {
 		AllowCredentials: true,
 	}))
 
-	err = xray.InitXRay()
-	if err != nil {
-		logs.Error("error configurando AWS XRay: %v", err)
-	}
 	apistatus.Init()
 	auditoria.InitMiddleware()
-	beego.ErrorController(&customerrorv2.CustomErrorController{})
 	security.SetSecurityHeaders()
+	xray.Init()
+	beego.ErrorController(&customerrorv2.CustomErrorController{})
 	beego.Run()
 }
